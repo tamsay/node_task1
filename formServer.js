@@ -16,7 +16,7 @@ const server = http.createServer((request, response)=>{
                 fs.writeFile('message.txt', result.message, (error)=>{
                  console.log(`Inputted message is: ${result.message}`);
             });
-            response.end();
+            response.end('ok');
         });
       };
    response.end();
