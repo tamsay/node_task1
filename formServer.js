@@ -6,7 +6,7 @@ const { parse } = require('querystring');
 const server = http.createServer((request, response)=>{
     response.writeHead(200, {'Content-Type': 'text/html'});
 	
-    fs.readFile('form.html', 'utf8', function(error, data) {
+    fs.readFile('index.html', 'utf8', function(error, data) {
         response.write(data);
     
 
