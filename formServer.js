@@ -11,7 +11,7 @@ const server = http.createServer((request, response)=>{
     
 
     if (request.method === 'POST') {
-        collectRequestData(request, result => {
+        requestData(request, result => {
             console.log(result);
                 fs.writeFile('message.txt', result.message, (error)=>{
                  console.log(`Inputted message is: ${result.message}`);
@@ -23,7 +23,7 @@ const server = http.createServer((request, response)=>{
   });
 });
 
-function collectRequestData(request, callback) {
+function requestData(request, callback) {
     const FORM_URLENCODED = 'application/x-www-form-urlencoded';
     if(request.headers['content-type'] === FORM_URLENCODED) {
         let body = '';
